@@ -1,13 +1,10 @@
 ﻿using System;
 
-namespace W4HackerRankChristianRomero
+namespace w4_hr
 {
-
-
-
-     class Program
+    class Program
     {
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
             //create a staircase of size N
             /*Reqs:
@@ -23,9 +20,9 @@ namespace W4HackerRankChristianRomero
             //Stair.PrintStaircase(number)
 
             stair.GetInput();
-            
+
             stair.PrintStaircase(stair.number);
-                
+
         }
     }//eoc
-}//eon
+}
