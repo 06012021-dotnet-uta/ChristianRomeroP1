@@ -38,7 +38,18 @@ namespace w4_hr
                 //print out N #'s
 
                 //Console.WriteLine($"#*{i}");let's see how this goes
-                //first attempt didn't work - did some research on string constructor and came up with this:
+
+                /*first attempt didn't work - did some research on string constructor and came up with this:
+                Essentially, the new string constructor creates a string of a certain character iterated upon the scoped variable i. Admittedly, this code
+                doesn't align to rightside.
+
+                Perhaps this can be solved:
+                1) creating a collection
+                2) forloop that CREATES  "N" strings of # of "i" length (up to N+1) and INSERTS the objects into the collection
+                3) another loop that iterates across the entire collection (using counter variable "p") to print out each object IN A SPECIFIC FORMAT 
+                (right align by "p" cahracters) using: 
+                Console.WriteLine([string object], {(index),(alignment)});
+                 */
                 System.Console.WriteLine(new string('#', i)); // this will print out i number of #'s per line
             }
         }
