@@ -1,0 +1,16 @@
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\bin\Debug\net5.0\w4 hr.exe
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\bin\Debug\net5.0\w4 hr.deps.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\bin\Debug\net5.0\w4 hr.runtimeconfig.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\bin\Debug\net5.0\w4 hr.runtimeconfig.dev.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\bin\Debug\net5.0\w4 hr.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\bin\Debug\net5.0\ref\w4 hr.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\bin\Debug\net5.0\w4 hr.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.csproj.AssemblyReference.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.AssemblyInfoInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.AssemblyInfo.cs
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.csproj.CoreCompileInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\ref\w4 hr.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\W4HackerRankChristianRomero\w4 hr\obj\Debug\net5.0\w4 hr.genruntimeconfig.cache

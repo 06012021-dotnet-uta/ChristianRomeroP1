@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\W4HackerRankChristianRomero.csproj": {}
+    "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\w4 hr\\w4 hr.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\W4HackerRankChristianRomero.csproj": {
+    "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\w4 hr\\w4 hr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\W4HackerRankChristianRomero.csproj",
-        "projectName": "W4HackerRankChristianRomero",
-        "projectPath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\W4HackerRankChristianRomero.csproj",
+        "projectUniqueName": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\w4 hr\\w4 hr.csproj",
+        "projectName": "w4 hr",
+        "projectPath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\w4 hr\\w4 hr.csproj",
         "packagesPath": "C:\\Users\\Christian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\obj\\",
+        "outputPath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\W4HackerRankChristianRomero\\w4 hr\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Christian\\AppData\\Roaming\\NuGet\\NuGet.Config",
