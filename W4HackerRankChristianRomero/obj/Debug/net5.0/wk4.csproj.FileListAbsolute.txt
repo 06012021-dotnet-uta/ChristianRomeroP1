@@ -1,0 +1,5 @@
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP0\hr\wk4\obj\Debug\net5.0\wk4.csproj.AssemblyReference.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP0\hr\wk4\obj\Debug\net5.0\wk4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP0\hr\wk4\obj\Debug\net5.0\wk4.AssemblyInfoInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP0\hr\wk4\obj\Debug\net5.0\wk4.AssemblyInfo.cs
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP0\hr\wk4\obj\Debug\net5.0\wk4.csproj.CoreCompileInputs.cache
