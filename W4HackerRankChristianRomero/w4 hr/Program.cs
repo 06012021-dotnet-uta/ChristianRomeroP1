@@ -15,10 +15,6 @@ namespace w4_hr
 
             Stair stair = new Stair();
 
-            //Messages.ObtainConsent();
-
-            //Stair.PrintStaircase(number)
-
             stair.GetInput();
 
             stair.PrintStaircase(stair.number);
