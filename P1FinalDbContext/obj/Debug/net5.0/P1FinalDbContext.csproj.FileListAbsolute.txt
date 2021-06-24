@@ -1,0 +1,15 @@
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\bin\Debug\net5.0\P1FinalDbContext.deps.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\bin\Debug\net5.0\P1FinalDbContext.runtimeconfig.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\bin\Debug\net5.0\P1FinalDbContext.runtimeconfig.dev.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\bin\Debug\net5.0\P1FinalDbContext.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\bin\Debug\net5.0\ref\P1FinalDbContext.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\bin\Debug\net5.0\P1FinalDbContext.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.csproj.AssemblyReference.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.AssemblyInfoInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.AssemblyInfo.cs
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.csproj.CoreCompileInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\ref\P1FinalDbContext.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalDbContext\obj\Debug\net5.0\P1FinalDbContext.genruntimeconfig.cache
