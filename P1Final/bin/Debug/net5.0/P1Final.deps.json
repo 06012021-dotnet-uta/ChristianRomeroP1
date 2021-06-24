@@ -37,6 +37,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "P1FinalDbContext": "1.0.0",
+          "P1Models": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -1806,6 +1807,14 @@
         },
         "compile": {
           "P1FinalDbContext.dll": {}
+        }
+      },
+      "P1Models/1.0.0": {
+        "runtime": {
+          "P1Models.dll": {}
+        },
+        "compile": {
+          "P1Models.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4364,6 +4373,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "P1FinalDbContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "P1Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

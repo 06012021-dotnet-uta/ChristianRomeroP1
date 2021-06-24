@@ -10,7 +10,9 @@ a.navbar-brand {
 }
 
 .logo{
-    block-size:auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* Provide sufficient contrast against white background */
 a {

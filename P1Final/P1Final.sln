@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P1FinalBusiness", "..\P1Fin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P1FinalTests", "..\P1FinalTests\P1FinalTests.csproj", "{3DD999E3-31D9-4A0C-B70C-7E2377492009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P1Models", "..\P1Models\P1Models.csproj", "{FF80EAB7-2690-4031-9B8F-556401BD7607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P1Models", "..\P1Models\P1Models.csproj", "{FF80EAB7-2690-4031-9B8F-556401BD7607}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

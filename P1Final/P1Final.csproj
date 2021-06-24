@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\lib\p1logo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -15,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\P1FinalDbContext\P1FinalDbContext.csproj" />
+    <ProjectReference Include="..\P1Models\P1Models.csproj" />
   </ItemGroup>
 
 </Project>

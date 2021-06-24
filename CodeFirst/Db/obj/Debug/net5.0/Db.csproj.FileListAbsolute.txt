@@ -1,0 +1,12 @@
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\bin\Debug\net5.0\Db.deps.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\bin\Debug\net5.0\Db.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\bin\Debug\net5.0\ref\Db.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\bin\Debug\net5.0\Db.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\Db.csproj.AssemblyReference.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\Db.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\Db.AssemblyInfoInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\Db.AssemblyInfo.cs
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\Db.csproj.CoreCompileInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\Db.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\ref\Db.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\CodeFirst\Db\obj\Debug\net5.0\Db.pdb
