@@ -41,10 +41,6 @@ namespace P1FinalDbContext
             {
                 entity.ToTable("Customer");
 
-                entity.Property(e => e.Age).HasDefaultValueSql("((0))");
-
-                entity.Property(e => e.City).HasMaxLength(30);
-
                 entity.Property(e => e.Email).HasMaxLength(64);
 
                 entity.Property(e => e.Fname)
@@ -55,23 +51,17 @@ namespace P1FinalDbContext
                     .HasMaxLength(30)
                     .HasColumnName("LName");
 
-                entity.Property(e => e.Mailing).HasMaxLength(100);
-
-                entity.Property(e => e.Member).HasDefaultValueSql("((0))");
+                entity.Property(e => e.Member).HasMaxLength(3);
 
                 entity.Property(e => e.Password).HasMaxLength(100);
 
-                entity.Property(e => e.State).HasMaxLength(20);
-
                 entity.Property(e => e.Username).HasMaxLength(30);
-
-                entity.Property(e => e.Zip).HasDefaultValueSql("((0))");
 
                 entity.HasOne(d => d.FavoriteNavigation)
                     .WithMany(p => p.Customers)
                     .HasForeignKey(d => d.Favorite)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Customer__Favori__5070F446");
+                    .HasConstraintName("FK__Customer__Favori__46E78A0C");
             });
 
             modelBuilder.Entity<Favorite>(entity =>
@@ -79,7 +69,7 @@ namespace P1FinalDbContext
                 entity.HasOne(d => d.StoreNavigation)
                     .WithMany(p => p.Favorites)
                     .HasForeignKey(d => d.Store)
-                    .HasConstraintName("FK__Favorites__Store__3B75D760");
+                    .HasConstraintName("FK__Favorites__Store__3F466844");
             });
 
             modelBuilder.Entity<Inventory>(entity =>
@@ -95,19 +85,19 @@ namespace P1FinalDbContext
                     .WithMany(p => p.Inventories)
                     .HasForeignKey(d => d.ProductId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Inventory__Produ__47DBAE45");
+                    .HasConstraintName("FK__Inventory__Produ__4AB81AF0");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Inventories)
                     .HasForeignKey(d => d.StoreId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Inventory__Store__46E78A0C");
+                    .HasConstraintName("FK__Inventory__Store__49C3F6B7");
             });
 
             modelBuilder.Entity<Location>(entity =>
             {
                 entity.HasKey(e => e.StoreId)
-                    .HasName("PK__Location__3B82F101611E40C9");
+                    .HasName("PK__Location__3B82F10155C9A1FF");
 
                 entity.ToTable("Location");
 
@@ -129,17 +119,17 @@ namespace P1FinalDbContext
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
-                    .HasConstraintName("FK__Orders__Customer__5812160E");
+                    .HasConstraintName("FK__Orders__Customer__5070F446");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK__Orders__ProductI__5629CD9C");
+                    .HasConstraintName("FK__Orders__ProductI__4E88ABD4");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.StoreId)
-                    .HasConstraintName("FK__Orders__StoreId__571DF1D5");
+                    .HasConstraintName("FK__Orders__StoreId__4F7CD00D");
             });
 
             modelBuilder.Entity<Product>(entity =>

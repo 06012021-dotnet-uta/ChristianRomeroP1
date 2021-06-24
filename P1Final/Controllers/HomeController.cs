@@ -28,6 +28,16 @@ namespace P1Final.Controllers
             return View();
         }
 
+        //I think this creates a new "tab"
+        public IActionResult Register()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

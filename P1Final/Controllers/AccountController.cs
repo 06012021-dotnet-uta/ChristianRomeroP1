@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using P1Final.Models;
+using P1Models;
 
 namespace P1Final.Controllers
 {
@@ -12,7 +14,17 @@ namespace P1Final.Controllers
         // GET: AccountController
         public ActionResult Index()
         {
-            return View();
+            CustomerModel cm = new CustomerModel()
+            {
+                CustomerId = 10,
+                Fname = "Milo",
+                Lname = "Roth",
+                Username = "Olim",
+                Password = "Thor",
+                Member = "No", 
+            };
+ 
+            return View(cm);
         }
 
         // GET: AccountController/Details/5
@@ -83,5 +95,5 @@ namespace P1Final.Controllers
                 return View();
             }
         }
-    }
-}
+    }//eoc
+}//eon
