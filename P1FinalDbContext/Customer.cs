@@ -18,10 +18,7 @@ namespace P1FinalDbContext
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public int Favorite { get; set; }
-        public string Member { get; set; }
 
-        public virtual Favorite FavoriteNavigation { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

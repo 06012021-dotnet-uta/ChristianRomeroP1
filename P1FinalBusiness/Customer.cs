@@ -1,13 +1,147 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using P1FinalDbContext;
+using P1Models;
 
 namespace P1FinalBusiness
 {
-    public class Customer
+    public class Customer //: ICustomer
     {
+        private readonly P1TestDbContext _context;//similar to Store class
+        public Customer(P1TestDbContext context)
+        {
+            this._context = context;
+        }
+
+        //all customers have a list property to use for the GetAllCustomerList
+        //List<P1TestDbContext.Customer> list;
+
+        ///<summary>
+        ///This is a method to register any new customers using CustomerModel data from the view and persist to the Db
+        ///</summary>
+        ///<parameter>
+        ///</parameter>
+        ///
+
+
+        // register new customer 
+        /*
+        public async Task<bool> RegisterCustomerAsync(CustomerModel cm)
+        {
+            // create a try/catch  to save user
+            await _context.Customers.AddAsync(cm);
+            try
+            {
+                await _context.SaveChangesAsync();
+                //await _context.SaveChangesAsync();
+
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
+                return false;
+            }
+            catch (DbUpdateException ex)
+            {       //change this to logging
+                Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
+                return false;
+            }
+            // currentUser
+            currentUser = user;
+            // instantiate a shopping cart iimediately for the new customer 
+            var newCart = new Cart(user.UserId);
+            _context.Carts.Add(newCart);
+            _context.SaveChanges();
+            return true;
+        }
+        */
+
+
+        ///<<summary>
+        ///This is a method to login a new user
+        ///</summary>
+
+        /* public async Task<bool> LoginAsync(Customer customer)
+        {
+            // create a try/catch  to save user
+            try 
+            { 
+                var current = _context.Customers.ToList().Where(x => x.Email == c ).FirstOrDefault(); 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"User not found => {ex.InnerException}");
+                return false;
+            }
+            return true;
+        }
+       */
+
+        public List<P1FinalDbContext.Customer> PrintAllCustomers()
+        {
+            List<P1FinalDbContext.Customer> c = _context.Customers.ToList();
+            return (c);
+        }
+
+        //use a GET method to dynamically change customerid
+        public List<P1FinalDbContext.Order> PrintCustomerOrder(int customerid)
+        {
+            List<Order> o = _context.Orders.Where(x => x.CustomerId == customerid).ToList();
+            return (o);
+        }
+
+
+        /// <summary>
+        /// This is an interface that implements a View of StoreList & allows users to view all stores
+        /// </summary>
+        /// <returns>Returns a view of all stores</returns>
+
+        /* public ArrayList AllCustomerList()
+         {
+
+             ArrayList customerlist = new ArrayList();
+             var customers = _context.Customers.Where(x => x.CustomerId >= 0).ToList();
+             foreach(var c in customers)
+             {
+                 CustomerModel cm = new CustomerModel();
+                 cm.CustomerId = c.CustomerId;
+                 cm.Fname = c.Fname;
+                 cm.Lname = c.Lname;
+                 cm.Username = c.Username;
+                 cm.Password = c.Password;
+                 cm.Email = c.Email;
+             }
+
+             try
+             {
+                 list = _context.Customers.ToList();
+             }
+             catch (ArgumentNullException ex)
+             {
+                 Console.WriteLine($"There was a problem gettign the players list => {ex.InnerException}");
+             }
+             catch (Exception ex)
+             {
+                 Console.WriteLine($"There was a problem gettign the players list => {ex}");
+             }
+             return list;
+         }
+
+         */
+
+
+
+
+
+
+
+
+
         ////blic static void SortCustomersFirst()
         ////
         ////  
@@ -74,6 +208,15 @@ namespace P1FinalBusiness
         ///  }
         ///
         //
+
+        /*
+        Task<bool> RegisterUserAsync(User user);
+        Task<bool> LoginAsync(User user);
+        Task<List<User>> UserListAsync();
+        */
+
+
+
 
     }//eoc
 }//eon

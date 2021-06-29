@@ -16,8 +16,7 @@ namespace P1FinalDbContext
         public int ProductId { get; set; }
         public string Make { get; set; }
         public string Text { get; set; }
-        public string Size { get; set; }
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
 
         public virtual ICollection<Inventory> Inventories { get; set; }
         public virtual ICollection<Order> Orders { get; set; }

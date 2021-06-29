@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    class StoreModel
+    public class StoreModel
     {
     }
 }

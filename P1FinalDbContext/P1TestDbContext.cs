@@ -18,7 +18,6 @@ namespace P1FinalDbContext
         }
 
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Favorite> Favorites { get; set; }
         public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
@@ -28,8 +27,7 @@ namespace P1FinalDbContext
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-NF2VDIE\\SQLEXPRESS01;Database=P1TestDb;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-NF2VDIE\\SQLEXPRESS01;Database=P0Db;Trusted_Connection=True;");
             }
         }
 
@@ -51,25 +49,9 @@ namespace P1FinalDbContext
                     .HasMaxLength(30)
                     .HasColumnName("LName");
 
-                entity.Property(e => e.Member).HasMaxLength(3);
-
                 entity.Property(e => e.Password).HasMaxLength(100);
 
                 entity.Property(e => e.Username).HasMaxLength(30);
-
-                entity.HasOne(d => d.FavoriteNavigation)
-                    .WithMany(p => p.Customers)
-                    .HasForeignKey(d => d.Favorite)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Customer__Favori__46E78A0C");
-            });
-
-            modelBuilder.Entity<Favorite>(entity =>
-            {
-                entity.HasOne(d => d.StoreNavigation)
-                    .WithMany(p => p.Favorites)
-                    .HasForeignKey(d => d.Store)
-                    .HasConstraintName("FK__Favorites__Store__3F466844");
             });
 
             modelBuilder.Entity<Inventory>(entity =>
@@ -97,7 +79,7 @@ namespace P1FinalDbContext
             modelBuilder.Entity<Location>(entity =>
             {
                 entity.HasKey(e => e.StoreId)
-                    .HasName("PK__Location__3B82F10155C9A1FF");
+                    .HasName("PK__Location__3B82F101A453FE38");
 
                 entity.ToTable("Location");
 
@@ -142,8 +124,6 @@ namespace P1FinalDbContext
                     .HasColumnType("smallmoney")
                     .HasDefaultValueSql("((0.00))");
 
-                entity.Property(e => e.Size).HasMaxLength(10);
-
                 entity.Property(e => e.Text)
                     .HasMaxLength(250)
                     .IsUnicode(false)
@@ -151,6 +131,11 @@ namespace P1FinalDbContext
             });
 
             OnModelCreatingPartial(modelBuilder);
+        }
+
+        public static explicit operator P1TestDbContext(Customer v)
+        {
+            throw new NotImplementedException();
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
