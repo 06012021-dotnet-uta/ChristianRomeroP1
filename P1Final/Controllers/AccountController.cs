@@ -21,7 +21,6 @@ namespace P1Final.Controllers
                 Lname = "Roth",
                 Username = "Olim",
                 Password = "Thor",
-                Member = "No", 
             };
  
             return View(cm);

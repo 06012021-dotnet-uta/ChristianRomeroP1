@@ -13,7 +13,7 @@ namespace P1FinalDbContext
         }
 
         public int FavoriteId { get; set; }
-        public int? Store { get; set; }
+        public int Store { get; set; }
 
         public virtual Location StoreNavigation { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }

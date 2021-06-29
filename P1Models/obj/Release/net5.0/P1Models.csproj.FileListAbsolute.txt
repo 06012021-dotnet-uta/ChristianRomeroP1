@@ -1,0 +1,12 @@
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\bin\Release\net5.0\P1Models.deps.json
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\bin\Release\net5.0\P1Models.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\bin\Release\net5.0\ref\P1Models.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\bin\Release\net5.0\P1Models.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\P1Models.csproj.AssemblyReference.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\P1Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\P1Models.AssemblyInfoInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\P1Models.AssemblyInfo.cs
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\P1Models.csproj.CoreCompileInputs.cache
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\P1Models.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\ref\P1Models.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1Models\obj\Release\net5.0\P1Models.pdb

@@ -10,3 +10,8 @@ C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1F
 C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\obj\Debug\net5.0\P1FinalBusiness.dll
 C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\obj\Debug\net5.0\ref\P1FinalBusiness.dll
 C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\obj\Debug\net5.0\P1FinalBusiness.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\bin\Debug\net5.0\P1FinalDbContext.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\bin\Debug\net5.0\P1Models.dll
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\bin\Debug\net5.0\P1FinalDbContext.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\bin\Debug\net5.0\P1Models.pdb
+C:\Users\Christian\Desktop\AllBatchFiles\ChristianRomeroP1\ChristianRomeroP1\P1FinalBusiness\obj\Debug\net5.0\P1FinalBusiness.csproj.CopyComplete

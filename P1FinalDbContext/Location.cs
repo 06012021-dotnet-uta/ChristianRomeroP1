@@ -9,7 +9,6 @@ namespace P1FinalDbContext
     {
         public Location()
         {
-            Favorites = new HashSet<Favorite>();
             Inventories = new HashSet<Inventory>();
             Orders = new HashSet<Order>();
         }
@@ -20,7 +19,6 @@ namespace P1FinalDbContext
         public string Address { get; set; }
         public string Phone { get; set; }
 
-        public virtual ICollection<Favorite> Favorites { get; set; }
         public virtual ICollection<Inventory> Inventories { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
