@@ -90,7 +90,7 @@ namespace P1Models
 
         protected string _email;
 
-        [Required(ErrorMessage = "Password must have length greater than 10 and less than 50.")]
+        [Required(ErrorMessage = "Email must be less than 64 characters.")]
         [MaxLength(64)]
         [Display(Name = "Email")]
         public string Email

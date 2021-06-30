@@ -320,10 +320,25 @@ namespace P1Final.Controllers
         }
 
 
-        public IActionResult ViewOrder()
+        public IActionResult ViewOrder(Cart cart)
         {
-            Cart ct = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
-            return View(ct);
+            try
+            {
+                Cart ct = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+                ct.Items = cart.Items;
+                return View(ct);
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine($"An ArgumentNullException was thrown: '{e}'");
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An Exception was thrown: '{ex}'");
+ 
+            }
+            return View("Login");
         }
 
         public IActionResult StartShopping(int locnum)
@@ -332,9 +347,11 @@ namespace P1Final.Controllers
             return View();
         }
 
-        public IActionResult Checkout(P1Models.Cart cart)//takes in an object type of cart
+        public IActionResult Checkout(Cart cart)//takes in an object type of cart
         {
-            return View(cart);
+            Cart ct = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            ct.Items = cart.Items;
+            return View(ct);
         }
 
 
