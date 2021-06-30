@@ -11,22 +11,26 @@ namespace P1FinalBusiness
     public class CusBus : ICustomer
     {
         private readonly P1TestDbContext _context;//similar to Store class
+        public P1Models.Customer currentcustomer = null;
         public CusBus(P1TestDbContext context)
         {
             this._context = context;
         }
 
-        public bool saveCustomer(P1Models.Customer cm)
+        public P1Models.Customer saveCustomer(P1Models.Customer cm)
         {
-            bool b = false;
-            _context.Add(cm);
-            _context.SaveChanges();
-            if (_context.SaveChanges() == 0)
+            //map cm to dbcustomer
+            P1FinalDbContext.Customer dbcustomer = new P1FinalDbContext.Customer();
             {
-                return b;
-            }
-            else { b = true; }
-            return b;
+                dbcustomer.Fname = cm.Fname;
+                dbcustomer.Lname = cm.Lname;
+                dbcustomer.Username = cm.Username;
+                dbcustomer.Password = cm.Password;
+                dbcustomer.Email = cm.Email;
+            };
+            _context.Add(dbcustomer);
+            _context.SaveChanges();
+            return cm;
         }
 
         /// <summary>
@@ -35,14 +39,15 @@ namespace P1FinalBusiness
         /// <param name="usn">user's username</param>
         /// <param name="pwd">user's paswword</param>
         /// <returns></returns>
-        public bool Login(string usn, string pwd)
+        public P1Models.Customer Login(string usn, string pwd)
         {
             P1FinalDbContext.Customer dbcustomer;
             dbcustomer = _context.Customers.Where(x => x.Username == usn && x.Password == pwd).FirstOrDefault();
             //let's map
             if (dbcustomer == null)
             {
-                return false;
+                currentcustomer = null;
+                return currentcustomer;
             }
             else
             {
@@ -54,23 +59,24 @@ namespace P1FinalBusiness
                     Email = dbcustomer.Email,
                     Password = dbcustomer.Password,
                 };
+                currentcustomer = q;
             }
-            return true;
+            return currentcustomer;
         }
 
-        public Task<bool> NewCustomerAsync(CustomerModel p)
+        /// <summary>
+        /// Returns List of Customers matching parameters or list of all customers on empty parameters
+        /// </summary>
+        /// <param name="fName">First name contains</param>
+        /// <param name="lName">Last name contains</param>
+        /// <returns>List of Customer Objects that contain input requirements</returns>
+        public List<P1FinalDbContext.Customer> GetCustomerList(string fName = "", string lName = "")
         {
-            throw new NotImplementedException();
+            var customerList = _context.Customers.Where(x => x.Fname.Contains(fName) && x.Lname.Contains(lName)).ToList();
+
+            return customerList;
         }
 
-        public Task<bool> RegisterAsync(string fname, string lname, string usn, string pwd, string email)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<bool> RegisterCustomerAsync(P1FinalDbContext.Customer p)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -12,7 +12,7 @@ namespace P1FinalBusiness
     {
         //carts need to have a context because they need to access the db & arraylist of orders
         private readonly P1TestDbContext _context;
-        private List<P1Models.Order> _ord;
+        //private List<P1Models.Order> _ord;
         // private List<Product> _prod;
         public List<P1Models.Product> Products { get; set; }
         public Customer Customer;

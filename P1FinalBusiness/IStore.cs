@@ -24,33 +24,24 @@ namespace P1FinalBusiness
 
 
         bool saveCustomer(P1Models.Customer cm);
+        P1FinalDbContext.Location GetLocation(int storeId);
+        List<P1FinalDbContext.Order> AllLocationOrders(int storeId);
+        int GetLocationNumber(int storeId);
         List<StoreInvenModel> ListStoreInven();
+        List<StoreInvenModel> ListStoreInven(int locnum);
+
+        Cart CreateCart(int locnum, string usn);
+        P1FinalDbContext.Order AddOrder();
+        //void AddCart();
 
 
+        //ArrayList ShowStores();
+        //ArrayList StoreInventory(int favoritechoice);
+        //List<P1Models.Location> GetLocationsList();
+        ////P1Models.Location GetLocation(int choice);
+        //List<P1Models.Location> StoreView();
+        //void SpecialDeals();
 
 
-        ArrayList ShowStores();
-        ArrayList StoreInventory(int favoritechoice);
-        List<P1Models.Location> GetLocationsList();
-        P1Models.Location GetLocation(int choice);
-        List<P1Models.Location> StoreView();
-        void SpecialDeals();
-
-        //method to view all stores from DB
-        //public static void StoreView()
-        //
-        //   using (var context = new context.P0DbContext())
-        //   {
-        //
-        //       List<context.Location> storelist = context.Locations.Where(l => l.StoreId >= 0).ToList();
-        //
-        //       //forreach loop to print out the values (if you just write consolewriteline you get memory address)
-        //       foreach (var store in storelist)
-        //       {
-        //           Console.WriteLine($"{store.StoreId}. {store.City}, {store.State}");
-        //       }
-        //
-        //   }
-        //
     }
 }

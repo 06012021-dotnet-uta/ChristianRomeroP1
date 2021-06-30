@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "1q6HfCigpW8dODKUsrFOJbDgY+4Qh9eBLej3m+z90sMAcFNjR6tJfPCyeGrLl2iTPcRyCfOu1X5K8XoxT8LAGQ==",
+  "dgSpecHash": "f8+2Jg5bGagQfG17Eg9M3+tzIg1FcmslZQZUzXkAB6Zo5LdZUvEe5+Dw+lkMFaMqFlbxjvNu2Vx42X+/t54pfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1Final\\P1Final.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Christian\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",

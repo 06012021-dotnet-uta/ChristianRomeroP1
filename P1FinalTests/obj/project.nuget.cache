@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+bwFNwyGej6sIWzdUVltdbXOrL6gjHxfg7vo5YWmaE4F/XYJdmX70LkCC4qrCSPd9Cx2wMOnKcuROFJwgKe3xg==",
+  "dgSpecHash": "60drdnxKJOV9ate3f7DLjgFz3KtobTx4hilv+YrmDD28dYtEs54VZLRGtcwyuIrQaLrt4C9+ZeLDZe9IrweSSw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1FinalTests\\P1FinalTests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\Christian\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\Christian\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",

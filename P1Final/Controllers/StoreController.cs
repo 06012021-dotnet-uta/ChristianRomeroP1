@@ -5,17 +5,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using P1FinalBusiness;
 using P1FinalDbContext;
+using P1Models;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace P1Final.Controllers
 {
     public class StoreController : Controller
     {
+        private readonly P1TestDbContext _context;
         private readonly IStore s;
-        
 
-        public StoreController(IStore store)
+        public StoreController(IStore store, P1TestDbContext context)
         {
             this.s = store;
+            this._context = context;
         }
 
         // GET: StoreController
@@ -36,31 +40,6 @@ namespace P1Final.Controllers
         }
 
 
-        //POST: StoreController/RegisterNewCustomer
-        public IActionResult RegisterNewCustomer(P1Models.Customer cm)
-        {
-            if (!ModelState.IsValid)
-            {
-                RedirectToAction("RegisterNewCustomer");
-                ViewBag.message = "There was an issue.";
-            }
-           
-            //s.RegisterCustomerAsync();
-
-            // mapp the values unputted by thre user to teh custoemr model from EF/
-
-
-            //1. create a method in your business layer that will do the below action
-            //check
-            s.saveCustomer(cm);
-
-            // 2. get some type of confirmation back.. like T/F
-            //check
-
-            // 3. render the start page for creating an order.
-            ViewBag.message = "You have successfully created a new account.";
-            return View();
-        }
 
 
         //GET: StoreController/Login
@@ -83,24 +62,273 @@ namespace P1Final.Controllers
         public IActionResult StoreList()
         {
             P1TestDbContext _context = new P1TestDbContext();
-            List<Location> locs = _context.Locations.ToList<Location>();
+            List<P1FinalDbContext.Location> locs = _context.Locations.ToList<P1FinalDbContext.Location>();
             return View(locs);
         }
 
-        //GET: StoreController/StoreList()
-        public IActionResult StoreOrderHistory()
+
+        [Route("StoreInven/1")]
+        public IActionResult StoreInven1(List<StoreInvenModel> list,int locnum =1)
         {
-            P1TestDbContext _context = new P1TestDbContext();
-            List<Order> locord = _context.Orders.ToList();//.Where(x => x.StoreId >= 1)
-            return View(locord);
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+        }
+
+        [Route("StoreInven/2")]
+        public IActionResult StoreInven2(List<StoreInvenModel> list,int locnum = 2)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+        }
+
+        [Route("StoreInven/3")]
+        public IActionResult StoreInven3(List<StoreInvenModel> list,int locnum = 3)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+        }
+
+        [Route("StoreInven/4")]
+        public IActionResult StoreInven4(List<StoreInvenModel> list,int locnum = 4)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+        }
+
+        [Route("StoreInven/5")]
+        public IActionResult StoreInven5(List<StoreInvenModel> list,int locnum = 5)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+        }
+
+        [Route("StoreInven/6")]
+        public IActionResult StoreInven6(List<StoreInvenModel> list,int locnum = 6)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+        }
+
+        //GET: StoreController/StoreOrderHistory
+        //public IActionResult StoreOrderHistory()
+        //{
+        //    List<P1DbFinalContext.Order> o = _context.Orders.Where(x => x.StoreId >= 0).ToList();//throwing exception because no orders exist
+        //    return View(o);
+        //}
+
+            //POST: StoreController/Shop
+            public IActionResult Shop(List<StoreInvenModel> list)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+
+            /*s.ListStoreInven();
+            I was going insane for an hr wondering why the View wasn't showing the output of the method...
+            Because I had to put it in the view for it to read the output...
+            */
+            //HttpContext.Session.SetInt32("storechoice",JsonConvert.1);
+            return View(s.ListStoreInven());
+            
+        }
+
+        [HttpPost]
+        public IActionResult AddToCart1(IEnumerable<StoreInvenModel> sim, int locnum)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+            //add to cart logic
+
+            //EACH ACTION METHOD MUST TAKE IN & RETURN A VIEW OF DATATYPE THAT IS BEING UNSERIALIZED
+
+            //take data from StoreInvenX and store into serial object
+            //in addtocart unserialize object & map to cart/productinven type
+            //serialize that new object and send into checkout
+            //checkout will unserialize cart object and convert into FinalOrder. Final order has total price property
+            //saveOrder function will take final order object and map to a DB Order, then add to context & save
+
+            //view for cart info will require cart data type
+        }
+        [HttpPost]
+        public IActionResult AddToCart2(IEnumerable<StoreInvenModel> sim, int locnum)
+        {
+            if (!ModelState.IsValid)
+            {
+                RedirectToAction("ErrLogin");
+            }
+            return View(s.ListStoreInven(locnum));
+            //add to cart logic
+
+            //EACH ACTION METHOD MUST TAKE IN & RETURN A VIEW OF DATATYPE THAT IS BEING UNSERIALIZED
+
+            //take data from StoreInvenX and store into serial object
+            //in addtocart unserialize object & map to cart/productinven type
+            //serialize that new object and send into checkout
+            //checkout will unserialize cart object and convert into FinalOrder. Final order has total price property
+            //saveOrder function will take final order object and map to a DB Order, then add to context & save
+
+            //view for cart info will require cart data type
+        }
+        [Route("CreateCart/1/MMore")]
+        public IActionResult CreateCart(int locnum = 1, string usn = "MMore")
+        {
+            Cart cart = s.CreateCart(locnum, usn);
+            HttpContext.Session.SetString("cartsession", JsonConvert.SerializeObject(cart));
+            return View(s.CreateCart(locnum,usn));
+        }
+        [Route("CreateCart/2/MMore")]
+        public IActionResult CreateCart2(int locnum = 1, string usn = "MMore")
+        {
+            Cart cart = s.CreateCart(locnum, usn);
+            HttpContext.Session.SetString("cartsession", JsonConvert.SerializeObject(cart));
+            return View(s.CreateCart(locnum, usn));
+        }
+        [Route("CreateCart/3/MMore")]
+        public IActionResult CreateCart3(int locnum = 1, string usn = "MMore")
+        {
+            Cart cart = s.CreateCart(locnum, usn);
+            HttpContext.Session.SetString("cartsession", JsonConvert.SerializeObject(cart));
+            return View(s.CreateCart(locnum, usn));
+        }
+        [Route("CreateCart/4/MMore")]
+        public IActionResult CreateCart4(int locnum = 1, string usn = "MMore")
+        {
+            Cart cart = s.CreateCart(locnum, usn);
+            HttpContext.Session.SetString("cartsession", JsonConvert.SerializeObject(cart));
+            return View(s.CreateCart(locnum, usn));
+        }
+        [Route("CreateCart/5/MMore")]
+        public IActionResult CreateCart5(int locnum = 1, string usn = "MMore")
+        {
+            Cart cart = s.CreateCart(locnum, usn);
+            HttpContext.Session.SetString("cartsession", JsonConvert.SerializeObject(cart));
+            return View(s.CreateCart(locnum, usn));
+        }
+
+        [Route("CreateCart/6/MMore")]
+        public IActionResult CreateCart6(int locnum = 1, string usn = "MMore")
+        {
+            Cart cart = s.CreateCart(locnum, usn);
+            HttpContext.Session.SetString("cartsession", JsonConvert.SerializeObject(cart));
+            return View(s.CreateCart(locnum, usn));
+        }
+        [HttpGet]
+        public IActionResult AddCart()
+        {
+            Cart ct = new Cart();
+            
+            Cart cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            //add i to cart list
+            //s.UpdateCart();
+            HttpContext.Session.SetString("addsession", JsonConvert.SerializeObject(cart));
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddCart(Item i)
+        {
+
+            Cart cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            //add i to cart list
+            //Item var = i;
+            //cart.Items.Add(var);
+            HttpContext.Session.SetString("addsession", JsonConvert.SerializeObject(cart));
+            return View(i);
+        }
+
+        [HttpPost]
+        public IActionResult AddCart2(Item i)
+        {
+
+            Cart cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            //add i to cart list
+            //Item var = i;
+            //cart.Items.Add(var);
+            HttpContext.Session.SetString("addsession", JsonConvert.SerializeObject(cart));
+            return View(i);
+        }
+
+        [HttpPost]
+        public IActionResult AddCart3(Item i)
+        {
+
+            Cart cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            //add i to cart list
+            //Item var = i;
+            //cart.Items.Add(var);
+            HttpContext.Session.SetString("addsession", JsonConvert.SerializeObject(cart));
+            return View(i);
         }
 
 
-        public IActionResult Shop(P1Models.StoreInvenModel sim)
+        [HttpPost]
+        public IActionResult AddCart4(Item i)
         {
-            //P1TestDbContext _context = new P1TestDbContext();
-            //List<Product> l = _context.Products.Where(x => x.ProductId <= 1089).ToList();
-            s.ListStoreInven();
+
+            Cart cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            //add i to cart list
+            //Item var = i;
+            //cart.Items.Add(var);
+            HttpContext.Session.SetString("addsession", JsonConvert.SerializeObject(cart));
+            return View(i);
+        }
+
+        [HttpPost]
+        public IActionResult AddCart5(Item i)
+        {
+
+            Cart cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            //add i to cart list
+            //Item var = i;
+            //cart.Items.Add(var);
+            HttpContext.Session.SetString("addsession", JsonConvert.SerializeObject(cart));
+            return View(i);
+        }
+
+        [HttpPost]
+        public IActionResult AddCart6(Item i)
+        {
+
+            Cart cart = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            //add i to cart list
+            //Item var = i;
+            //cart.Items.Add(var);
+            HttpContext.Session.SetString("addsession", JsonConvert.SerializeObject(cart));
+            return View(i);
+        }
+
+
+        public IActionResult ViewOrder()
+        {
+            Cart ct = JsonConvert.DeserializeObject<Cart>(HttpContext.Session.GetString("cartsession"));
+            return View(ct);
+        }
+
+        public IActionResult StartShopping(int locnum)
+        {
+            s.ListStoreInven(locnum);
             return View();
         }
 
@@ -126,12 +354,7 @@ namespace P1Final.Controllers
 
 
 
-        public IActionResult PrintStoresArray()
-        {
-            s.ShowStores();
-            //ViewBag.ArrayStore = s.arr;
-            return View();
-        }
+
 
         public IActionResult PrintAllStores()
         {

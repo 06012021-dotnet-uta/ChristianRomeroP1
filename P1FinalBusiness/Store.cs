@@ -76,80 +76,7 @@ namespace P1FinalBusiness
             else { return false; }
 		}
 
-		public async Task<bool> RegisterCustomerAsync(P1FinalDbContext.Customer p)
-		{
-			//create a try/catch to save the player
-			await _context.Customers.AddAsync(p);
-			try
-			{
-				await _context.SaveChangesAsync();
-			}
-			catch (DbUpdateConcurrencyException ex)
-			{
-				Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
-				return false;
-			}
-			catch (DbUpdateException ex)
-			{       //change this to logging
-				Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
-				return false;
-			}
-			return true;
-		}
-		
 
-
-		/// <summary>
-		/// This is the method to login correctly.
-		/// </summary>
-		/// <param name="usn">This is a customer's username</param>
-		/// <param name="pwd">This is a customer's password</param>
-		/// <returns></returns>
-		public bool Login(string usn, string pwd)
-		{
-			P1FinalDbContext.Customer cm;
-			
-			using (P1TestDbContext context = new P1TestDbContext())
-			{
-				cm = context.Customers.Where(x => x.Username == usn && x.Password == pwd).FirstOrDefault();
-			}
-
-			if (cm == null)
-			{
-				return false;
-			}
-			else
-			{
-				//currentcustomer = cm;
-				return true;
-			}
-		}
-		
-
-		/// <summary>
-		/// Registers customer to Db and implements exception handling
-		/// </summary>
-		/// <param name="p">This is a CustomerModel type from the Customer view</param>
-		/// <returns>Returns a boolean value of whether the customer was successfully added to Db</returns>
-		/*
-		 * public async Task<bool> NewCustomerAsync(P1Models.CustomerModel cm)
-	{
-		//create a try/catch to save the player
-		await _context.Customers.AddAsync(cm);
-		try
-		{
-			await _context.SaveChangesAsync();
-		}
-		catch (DbUpdateConcurrencyException ex)
-		{
-			Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
-			return false;
-		}
-		/*catch (DbUpdateException ex)
-		{       //change this to logging
-			Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
-			return false;
-		}*/
 
 
 
@@ -182,20 +109,6 @@ namespace P1FinalBusiness
 			///</summary>
 			///<param name="favoritechoice"> This parameter is chosen from a view where the customer selects a favorite store</param>
 
-			public ArrayList StoreInventory(int favoritechoice)
-		{
-			//retrieve favorite choice value
-			ArrayList arr = new ArrayList();
-
-			var stores = _context.Inventories.Where(x => x.StoreId == favoritechoice).ToList();
-
-			foreach (var s in stores)
-			{
-				
-			}
-
-			return arr;
-		}
 
 
 		///<summary>
