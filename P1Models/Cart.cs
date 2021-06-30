@@ -8,7 +8,7 @@ namespace P1Models
 {
     public class Cart
     {
-        public List<Item> Items = new List<Item>();
+        public List<Item> Items;
         public int CustomerId { get; set; }
         public DateTime DateOrder { get; set; }
         public Cart( List<Item> items)

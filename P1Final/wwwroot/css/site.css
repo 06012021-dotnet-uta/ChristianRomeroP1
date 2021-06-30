@@ -19,6 +19,15 @@ a {
   color: #0366d6;
 }
 
+.table th, .table td {
+    text-align: center;
+}
+
+.storeinv{
+    text-align:center;
+}
+
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
