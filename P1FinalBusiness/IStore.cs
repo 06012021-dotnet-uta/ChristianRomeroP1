@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using P1FinalDbContext;
 using P1Models;
 
 namespace P1FinalBusiness
@@ -17,13 +19,22 @@ namespace P1FinalBusiness
         display all order history for this location
          */
 
-        Task<bool> NewCustomerAsync(CustomerModel p);
-        Task<List<CustomerModel>> PlayerListAsync();
+        //Task<bool> NewCustomerAsync(CustomerModel p);
+        //Task<List<CustomerModel>> PlayerListAsync();
 
 
-        
+        bool saveCustomer(P1Models.Customer cm);
+        List<StoreInvenModel> ListStoreInven();
 
 
+
+
+        ArrayList ShowStores();
+        ArrayList StoreInventory(int favoritechoice);
+        List<P1Models.Location> GetLocationsList();
+        P1Models.Location GetLocation(int choice);
+        List<P1Models.Location> StoreView();
+        void SpecialDeals();
 
         //method to view all stores from DB
         //public static void StoreView()

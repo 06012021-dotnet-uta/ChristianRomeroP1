@@ -27,14 +27,19 @@ namespace P1Final
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+            });
             services.AddDbContext<P1TestDbContext>(options =>
             {
                 if (!options.IsConfigured)
                 {
-                    options.UseSqlServer("Server=DESKTOP-NF2VDIE\\SQLEXPRESS01;Database=P0Db;Trusted_Connection=True;");
+                    options.UseSqlServer("Server=DESKTOP-NF2VDIE\\SQLEXPRESS01;Database=P1TestDb;Trusted_Connection=True;");
                 }
             });
-            //services.AddScoped<IStore, Store>();
+            services.AddScoped<IStore, StoreBus>();
+            services.AddScoped<ICustomer, CusBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +57,7 @@ namespace P1Final
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 

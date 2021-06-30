@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace P1Models
 {
-    class OrderModelcs  //add foreignkeys
+   public class OrderModelcs  //add foreignkeys
     {
         private ArrayList orderGoods = new ArrayList();
 
@@ -21,11 +21,7 @@ namespace P1Models
 
 
         //constructor
-        public OrderModelcs()
-        {
-            OrderId = 0;
-             
-        }
+
 
 
         /// <summary>

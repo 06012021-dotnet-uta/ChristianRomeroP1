@@ -18,6 +18,8 @@ namespace P1FinalBusiness
             this._context = context;
         }
 
+        public string username { get; set; }
+        public string password { get; set; }
         //all customers have a list property to use for the GetAllCustomerList
         //List<P1TestDbContext.Customer> list;
 
@@ -30,8 +32,8 @@ namespace P1FinalBusiness
 
 
         // register new customer 
-        /*
-        public async Task<bool> RegisterCustomerAsync(CustomerModel cm)
+
+        /*public async Task<bool> RegisterCustomerAsync(P1FinalDbContext.Customer cm)
         {
             // create a try/catch  to save user
             await _context.Customers.AddAsync(cm);
@@ -65,22 +67,21 @@ namespace P1FinalBusiness
         ///<<summary>
         ///This is a method to login a new user
         ///</summary>
-
-        /* public async Task<bool> LoginAsync(Customer customer)
-        {
-            // create a try/catch  to save user
-            try 
-            { 
-                var current = _context.Customers.ToList().Where(x => x.Email == c ).FirstOrDefault(); 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"User not found => {ex.InnerException}");
-                return false;
-            }
-            return true;
-        }
-       */
+        //public async Task<bool> LoginAsync(CustomerModel customer)
+        //{
+        //    // create a try/catch  to save user
+        //    try 
+        //    { 
+        //        var current = _context.Customers.ToList().Where(x => x.Email == customer).FirstOrDefault(); 
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"User not found => {ex.InnerException}");
+        //        return false;
+        //    }
+        //    return true;
+        //}
+       
 
         public List<P1FinalDbContext.Customer> PrintAllCustomers()
         {
@@ -88,13 +89,14 @@ namespace P1FinalBusiness
             return (c);
         }
 
-        //use a GET method to dynamically change customerid
-        public List<P1FinalDbContext.Order> PrintCustomerOrder(int customerid)
-        {
-            List<Order> o = _context.Orders.Where(x => x.CustomerId == customerid).ToList();
-            return (o);
-        }
+        ////use a GET method to dynamically change customerid
+        //public List<P1FinalDbContext.Order> PrintCustomerOrder(int customerid)
+        //{
+        //    List<Order> o = _context.Orders.Where(x => x.CustomerId == customerid).ToList();
+        //    return (o);
+        //}
 
+       
 
         /// <summary>
         /// This is an interface that implements a View of StoreList & allows users to view all stores

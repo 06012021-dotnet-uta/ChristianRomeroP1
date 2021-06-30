@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace P1Models
 {
-    class ProductModel
+    public class ProductModel
     {
         [Required] //this annotation makes it required when entering this type of information
         [Key]

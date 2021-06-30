@@ -38,6 +38,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "P1FinalBusiness": "1.0.0",
+          "P1FinalDbContext": "1.0.0",
           "P1Models": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -1821,7 +1822,8 @@
       "P1FinalDbContext/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "P1Models": "1.0.0"
         },
         "runtime": {
           "P1FinalDbContext.dll": {}

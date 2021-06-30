@@ -13,17 +13,12 @@ namespace P1Final.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly P1TestDbContext _context = new P1TestDbContext();
+        private readonly P1TestDbContext _context;
 
-        //constructor dependency injection for contexts: create a constructor of a class by putting in an instance of a context as a constructor parameter
-
-        //
-
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(P1TestDbContext context, ILogger<HomeController> logger)
         {
-            _logger = logger;
-            
+            this._context = context;
+            _logger = logger;            
         }
 
         public IActionResult Index()
@@ -42,17 +37,8 @@ namespace P1Final.Controllers
             return View("ErrLogin");
         }
 
-        //I think this creates a new "tab"
-        public IActionResult StoreList()
-        {
-            List<Location> locs = _context.Locations.ToList<Location>();
-            return View(locs);
-        }
 
-        private void FetchCustomer()
-        {
 
-        }
 
         public IActionResult About()
         {

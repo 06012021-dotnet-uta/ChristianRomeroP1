@@ -13,8 +13,9 @@ namespace P1FinalBusiness
    public class Store //: IStore
     {
         private readonly P1TestDbContext _context;//all stores access DBcontext
-        public P1FinalDbContext.Customer currentcustomer { get; set; }//any given store has a customer shopping at it
-		public P1FinalDbContext.Location storechoice;
+        public Customer currentcustomer { get; set; }//any given store has a customer shopping at it
+		public P1FinalDbContext.Location storechoice;//to store the current store
+		public ArrayList arr;
 
 		//constructors
 		public Store() { }
@@ -23,15 +24,33 @@ namespace P1FinalBusiness
             this._context = context;
         }
 
-		public Store(P1FinalDbContext.Customer currentcustomer)
-        {
-			this.currentcustomer = currentcustomer;
-        }
+		//public Store(P1FinalDbContext.Customer currentcustomer)
+  //      {
+		//	this.currentcustomer = currentcustomer;
+  //      }
 
-		public Store(P1TestDbContext context, P1FinalDbContext.Customer customer)
-		{
-			this._context = context;
-			this.currentcustomer = customer;
+		//public Store(P1TestDbContext context, P1FinalDbContext.Customer customer)
+		//{
+		//	this._context = context;
+		//	this.currentcustomer = customer;
+		//}
+
+
+		///<summary>
+		///This method will persist changes to the database
+		/// </summary>
+		/// 
+		public bool AddCustomer(P1Models.Customer cm)
+        {
+			bool b = false;
+			_context.Add(cm);
+			_context.SaveChanges();
+            if(_context.SaveChanges()==0)
+			{
+				return b;
+            }
+            else { b = true; }
+			return b;
 		}
 
 
@@ -57,6 +76,27 @@ namespace P1FinalBusiness
             else { return false; }
 		}
 
+		public async Task<bool> RegisterCustomerAsync(P1FinalDbContext.Customer p)
+		{
+			//create a try/catch to save the player
+			await _context.Customers.AddAsync(p);
+			try
+			{
+				await _context.SaveChangesAsync();
+			}
+			catch (DbUpdateConcurrencyException ex)
+			{
+				Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
+				return false;
+			}
+			catch (DbUpdateException ex)
+			{       //change this to logging
+				Console.WriteLine($"There was a problem updating the Db => {ex.InnerException}");
+				return false;
+			}
+			return true;
+		}
+		
 
 
 		/// <summary>
@@ -80,7 +120,7 @@ namespace P1FinalBusiness
 			}
 			else
 			{
-				currentcustomer = cm;
+				//currentcustomer = cm;
 				return true;
 			}
 		}
@@ -121,7 +161,6 @@ namespace P1FinalBusiness
 		public ArrayList ShowStores()
 		{
 			//retrieve favorite choice value
-			ArrayList arr = new ArrayList();
 
 			var locs = _context.Locations.Where(x => x.StoreId >= 0).ToList();
 			foreach (var l in locs)
@@ -171,12 +210,12 @@ namespace P1FinalBusiness
 		///
 		///</parameter>
 		///
-		public List<Location> GetLocationsList()
-		{
-			List<Location> locList = _context.Locations.ToList();
-			return locList;
-			//user clicks button corresponding to a location 
-		}
+		//public List<Location> GetLocationsList()
+		//{
+		//	List<Location> locList = _context.Locations.ToList();
+		//	return locList;
+		//	//user clicks button corresponding to a location 
+		//}
 
 
 		/// <summary>
@@ -184,19 +223,19 @@ namespace P1FinalBusiness
 		/// </summary>
 		/// <returns></returns>
 		///         
-		public Location GetLocation(int choice)
-        {
-            storechoice = _context.Locations.Where(x => x.StoreId == choice).FirstOrDefault();
-            return storechoice;
-        }
+		//public P1Models.Location GetLocation(int choice)
+  //      {
+  //          storechoice = _context.Locations.Where(x => x.StoreId == choice).FirstOrDefault();
+  //          return storechoice;
+  //      }
 
 	//This is the original method that was created but limitation was that the scope prohibited from storing the info into a view
 	//I ended up using an arraylist of <Location> type to store the entities representing the stores so that a view could output that object
-		public List<Location> StoreView()
-		{
-			var choices = _context.Locations.Where(x => x.StoreId >= 0).ToList();
-			return choices;
-		}
+		//public List<P1Models.Location> StoreView()
+		//{
+		//	var choices = _context.Locations.Where(x => x.StoreId >= 0).ToList();
+		//	return choices;
+		//}
 		/*using (var context = new P1TestDbContext())
 		{
 
@@ -237,7 +276,40 @@ namespace P1FinalBusiness
 	/// 
 
 
+		///<summary>
+		///contains special deals logic
+		/// </summary>
+		/// 
+		public void SpecialDeals()//requires a parameter of a a cart/order
+        {
+			string[] dealsDays = { "1/1/2021", "2/14/2021", "06/30/2021", "6/30/2021", "7/4/2021", "12/24/2021" };
+			DateTime thisday = DateTime.Today;
+			var today= thisday.ToString("d");
 
 
-}//eoc
+			if(dealsDays.Contains(today))
+            {
+				//reduces prices by 15% to the cart order
+            }
+			else
+            {
+				//complete checkout function
+            }
+        }
+
+        public Task<bool> NewCustomerAsync(CustomerModel p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<CustomerModel>> PlayerListAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<P1FinalDbContext.Location> GetLocationsList()
+        {
+            throw new NotImplementedException();
+        }
+    }//eoc
 }//eon

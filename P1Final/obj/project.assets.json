@@ -2025,7 +2025,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "P1Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/P1FinalDbContext.dll": {}
@@ -7205,6 +7206,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
       "P1FinalBusiness >= 1.0.0",
+      "P1FinalDbContext >= 1.0.0",
       "P1Models >= 1.0.0"
     ]
   },
@@ -7237,6 +7239,9 @@
           "projectReferences": {
             "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1FinalBusiness\\P1FinalBusiness.csproj": {
               "projectPath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1FinalBusiness\\P1FinalBusiness.csproj"
+            },
+            "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1FinalDbContext\\P1FinalDbContext.csproj": {
+              "projectPath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1FinalDbContext\\P1FinalDbContext.csproj"
             },
             "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1Models\\P1Models.csproj": {
               "projectPath": "C:\\Users\\Christian\\Desktop\\AllBatchFiles\\ChristianRomeroP1\\ChristianRomeroP1\\P1Models\\P1Models.csproj"
