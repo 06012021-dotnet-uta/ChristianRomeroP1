@@ -1048,7 +1048,8 @@
       "P1FinalDbContext/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "P1Models": "1.0.0"
         },
         "runtime": {
           "P1FinalDbContext.dll": {}

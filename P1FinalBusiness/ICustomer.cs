@@ -9,8 +9,10 @@ namespace P1FinalBusiness
 {
     public interface ICustomer//Customer interface will contain 
     {
-        Task<bool> RegisterCustomerAsync(CustomerModel cm);
-        Task<bool> LoginAsync(CustomerModel cm);
-        Task<List<CustomerModel>> AllCustomerListAsync();
+        bool saveCustomer(P1Models.Customer cm);
+        Task<bool> RegisterAsync(string fname, string lname, string usn, string pwd, string email);
+        Task<bool> NewCustomerAsync(CustomerModel p);
+        Task<bool> RegisterCustomerAsync(P1FinalDbContext.Customer p);
+        bool Login(string usn, string pwd);
     }
 }

@@ -97,6 +97,13 @@ namespace P1Models
             this._phone = phone;
         }
 
+        public string GetFullAddress()
+        {
+            string fullAddy = $"{StoreId}. {Address}+ {City}+{State}.{Phone}.";
+
+            return fullAddy;
+        }
+        public string fullAddy { get; set; }
         //Stores have a list of 
     }//eoc
 }//eon

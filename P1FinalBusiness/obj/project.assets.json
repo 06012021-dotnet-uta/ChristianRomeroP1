@@ -1493,7 +1493,8 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
+          "P1Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/P1FinalDbContext.dll": {}
