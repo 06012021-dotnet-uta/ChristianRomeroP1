@@ -22,12 +22,12 @@ namespace P1Models
             this.QuanStore = quan;
         }
 
-        
+        public ShopCartModel Cart { get; set; }
 
         public int StoreId { get; set; }
         public int ProductId { get; set; }
         public int QuanStore { get; set; }
-
+        public int QuanBuy { get; set; }
 
         //customprops
         public string Make { get; set; }

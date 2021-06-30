@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -7,6 +8,7 @@ namespace P1FinalDbContext
 {
     public partial class Order
     {
+        [Key]
         public int OrderId { get; set; }
         public int? ProductId { get; set; }
         public int? StoreId { get; set; }

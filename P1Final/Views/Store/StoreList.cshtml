@@ -4,7 +4,7 @@
     ViewData["Title"] = "StoreList";
 }
 
-<h1>StoreList</h1>
+<h1>Select a store to shop from using the corresponding buttons</h1>
 
 <div>
     <h4>StoreList</h4>
@@ -52,7 +52,55 @@
         </tbody>
     </table>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                <form asp-action="StoreInven1" a>
+                    <div class="form-group">
+                        <input type="submit" value="TPA" class="btn btn-primary" />
+                    </div>
+                </form>
+            </th>
+            <th>
+                <form asp-action="StoreInven2" >
+                    <div class="form-group">
+                        <input type="submit" value="NYC" class="btn btn-primary" />
+                    </div>
+                </form>
+            </th>
+            <th>
+                <form asp-action="StoreInven3" >
+                    <div class="form-group">
+                        <input type="submit" value="LA" class="btn btn-primary" />
+                    </div>
+                </form>
+            </th>
+            <th>
+                <form asp-action="StoreInven4" >
+                    <div class="form-group">
+                        <input type="submit" value="Portland" class="btn btn-primary" />
+                    </div>
+                </form>
+            </th>
+            <th>
+                <form asp-action="StoreInven5" >
+                    <div class="form-group">
+                        <input type="submit" value="DC" class="btn btn-primary" />
+                    </div>
+                </form>
+            </th>
+            <th>
+                <form asp-action="StoreInven6" >
+                    <div class="form-group">
+                        <input type="submit" value="Atlanta" class="btn btn-primary" />
+                    </div>
+                </form>
+            </th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+

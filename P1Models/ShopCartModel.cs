@@ -8,16 +8,33 @@ using System.Threading.Tasks;
 
 namespace P1Models
 {
-    class ShopCartModel
+    public class ShopCartModel
     {
-        [Required]
-        public int CartId { get; set; }
-        [ForeignKey("CustomerId")]
-        public int CustomerId { get; set; }
-        public ShopCartModel(int userId)
+
+        public ShopCartModel()
+        { }
+
+        public ShopCartModel(int prodId, string make, string text, decimal price, int storeId, int quan)
         {
-            // this.CartId = cartId;
-            this.CustomerId = userId;
+            this.StoreId = storeId;
+            this.ProductId = prodId;
+            this.Make = make;
+            this.Text = text;
+            this.Price = price;
+            this.QuanStore = quan;
         }
+
+
+
+        public int StoreId { get; set; }
+        public int ProductId { get; set; }
+        public int QuanStore { get; set; }
+
+        //customprops
+        public string Make { get; set; }
+        public string Text { get; set; }
+        public decimal Price { get; set; }
+
+        public virtual ICollection<StoreInvenModel> StoreInvenModels { get; set; }
     }//eoc
 }//eon

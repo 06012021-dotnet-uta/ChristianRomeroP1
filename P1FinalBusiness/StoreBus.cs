@@ -1,4 +1,6 @@
-﻿using P1FinalDbContext;
+﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+using P1FinalDbContext;
 using P1Models;
 using System;
 using System.Collections;
@@ -14,7 +16,10 @@ namespace P1FinalBusiness
         private readonly P1TestDbContext _context = new P1TestDbContext();//all stores access DBcontext
         public Customer currentcustomer { get; set; }//any given store has a customer shopping at it
         public P1FinalDbContext.Location storechoice;//to store the current store
-        public ArrayList arr;
+        public int locnum;
+        public List<StoreInvenModel> prodinv;
+        public List<P1FinalDbContext.Order> storeorders;
+        public Cart storecart;
 
         /// <summary>
         /// This is a method that saves a Customer type to the DB
@@ -46,15 +51,32 @@ namespace P1FinalBusiness
             return b;
         }
 
+        public P1FinalDbContext.Location GetLocation(int storeId)
+        {
+            storechoice = _context.Locations.Where(x => x.StoreId == storeId).FirstOrDefault();
+            return storechoice;
+        }
+
+        public int GetLocationNumber(int storeId)
+        {
+            locnum = storeId;
+            return locnum;
+        }
+
+        public List<P1FinalDbContext.Order> AllLocationOrders(int storeId)
+        {
+            storeorders =_context.Orders.Where(x => x.StoreId == storeId).ToList();
+            return storeorders;
+        }
         /// <summary>
-        /// This lists the entire inventory for a store based on the storeid.
+        /// This is the default no args
         /// </summary>
-        /// <param name="storeid"></param>
-        /// <returns>Returns a list of a custom model type StoreInvenModel that is passed into the Shop action method.</returns>
+        /// <param name="locnum"></param>
+        /// <returns></returns>
         public List<StoreInvenModel> ListStoreInven()
         {
-            List<StoreInvenModel> prodinv = new List<StoreInvenModel>();//create new list
-                                                        //use join query to join on the storeId (column shared between Products & Store)
+            List<StoreInvenModel> list = new List<StoreInvenModel>();
+            //use join query to join on the storeId (column shared between Products & Store)
             var join = _context.Inventories.Join(_context.Products,
                 inv => inv.ProductId,//this determines on what column we are joining the tables
                 prod => prod.ProductId,
@@ -67,9 +89,34 @@ namespace P1FinalBusiness
                     inv.QuanStore)
             ).AsEnumerable();
 
-            prodinv = join.ToList();//we will just use storeid == 1 to test it out
+            list = join.ToList();//we will just use storeid == 1 to test it out
 
-            return prodinv;
+            return prodinv = list;
+        }
+        /// <summary>
+        /// This lists the entire inventory for a store based on the storeid.
+        /// </summary>
+        /// <param name="storeid"></param>
+        /// <returns>Returns a list of a custom model type StoreInvenModel that is passed into the Shop action method.</returns>
+        public List<StoreInvenModel> ListStoreInven(int locnum)
+        {
+              List<StoreInvenModel> list = new List<StoreInvenModel>();
+        //use join query to join on the storeId (column shared between Products & Store)
+            var join = _context.Inventories.Join(_context.Products,
+                inv => inv.ProductId,//this determines on what column we are joining the tables
+                prod => prod.ProductId,
+                (inv, prod) => new StoreInvenModel(//this is the custom type to pass into view 
+                    prod.ProductId,
+                    prod.Make,
+                    prod.Text,
+                    prod.Price,
+                    inv.StoreId,
+                    inv.QuanStore)
+            ).AsEnumerable();
+
+            list = join.Where( x => x.StoreId==locnum).ToList();//we will just use storeid == 1 to test it out
+
+            return prodinv = list;
         }
 
             //using (_context) DOESN'T WORK HOW I WANT
@@ -111,41 +158,79 @@ namespace P1FinalBusiness
         //    return productList;
         //}
 
-
-
-
-
-
-
-
-        public P1Models.Location GetLocation(int choice)
+        /// <summary>
+        /// Creates new order cart
+        /// </summary>
+        /// <param name="cusn"></param>
+        /// <param name="storechoice"></param>
+        /// <returns></returns>
+        public Cart CreateCart(int locnum, string usn)
         {
-            throw new NotImplementedException();
+            //adds new order to DB
+            P1FinalDbContext.Customer dbcustomer = new P1FinalDbContext.Customer();
+            P1FinalDbContext.Location dbloc = new P1FinalDbContext.Location();
+            P1FinalDbContext.Order newor= new P1FinalDbContext.Order();
+
+            dbcustomer = _context.Customers.Where(x => x.Username == usn).FirstOrDefault();
+            dbloc = _context.Locations.Where(x => x.StoreId == locnum).FirstOrDefault();
+            newor.CustomerId = dbcustomer.CustomerId;
+            newor.StoreId = dbloc.StoreId;
+            newor.DateOrder = DateTime.Now;
+
+            //_context.Orders.Add(newor);
+            //_context.SaveChanges();
+
+            //creates the cart
+            Cart cart = new Cart();
+            storecart=cart;
+            storecart.DateOrder = newor.DateOrder;
+            storecart.CustomerId = dbcustomer.CustomerId;
+            //2nd part
+            return storecart;
         }
 
-        public List<P1Models.Location> GetLocationsList()
+        //public Cart AddCart(Item i)
+        //{
+        //    Cart cart;
+
+        //    return cart;
+        //}
+
+       //public Cart AddToCart(Item i)
+       //{
+
+       //    if (QuanBuy == 0) return cart;
+
+       //    if (cart.ContainsKey(productId))
+       //    {
+       //        cart[productId] += QuanBuy;
+       //    }
+       //    else
+       //    {
+       //        cart.Add(productId, QuanBuy);
+       //    }
+
+
+       //    return cart;
+
+       //}
+
+        public P1FinalDbContext.Order AddOrder()
         {
-            throw new NotImplementedException();
+            //map cm to dbcustomer
+            P1FinalDbContext.Order order = new P1FinalDbContext.Order();
+            {
+                order.ProductId = 1000;
+                order.StoreId = 1;
+                order.DateOrder = DateTime.Now;
+                order.CustomerId = 2;
+                order.QuanOrder = 5;
+            };
+            _context.Add(order);
+            _context.SaveChanges();
+            return order;
         }
 
-        public ArrayList ShowStores()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void SpecialDeals()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ArrayList StoreInventory(int favoritechoice)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<P1Models.Location> StoreView()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
