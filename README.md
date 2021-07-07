@@ -1,5 +1,5 @@
 # ChristianRomeroP1
-PROJECT NAME
+IpsumWebApp
 Project Description
 This is a ASP.NET Core MVC project utilizing Entity Framework Core to create a Web Store Application that allows a user to create an account then view orders by user and store location. The user can create an order, view their order history, and view the order history of a store location. The Web Store App is in the process of being publicly deployed onto Azure Web Services.
 
@@ -16,7 +16,6 @@ Used a Database First approach to create relevant tables and content using Micro
 Ensured the database was constructed in 3NF 
 Created functionality for users to shop between store locations with unique inventories in a single session
 Created functionality for users to view their current order and order history
-
 
 To-do list:
 Refactor to add functionality for a unique admin account to add new locations and inventories
@@ -39,7 +38,6 @@ Be sure to include BOTH Windows and Unix command
 
 (These commands only function on Azure)
 
-A
 Images of what it should look like
 Usage
 
