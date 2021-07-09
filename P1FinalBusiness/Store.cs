@@ -60,7 +60,6 @@ namespace P1FinalBusiness
 		///
 		public async Task<bool> RegisterAsync(string fname, string lname, string usn, string pwd, string email)
 		{
-			
 				P1FinalDbContext.Customer c = new P1FinalDbContext.Customer();
 
 				c.Fname = fname;
