@@ -30,12 +30,11 @@ List of features ready and TODOs for future development:
 * 3) Build and run the web app locally using 'IIS Express"
 
 (Post-Azure Web Services Deployment)
+
 *Currently a work in progress*
 
-## Images of what it should look like
-* Usage
-
+## Images of what it should look like can be found in the 'P1images' folder
 
 
 License
-This project uses the following license: <license_name>.
+This project uses the following license: MIT License.
